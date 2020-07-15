@@ -1,0 +1,8 @@
+{
+  "name": "Test Extension Bug",
+  "version": "0.0.1",
+  "web_accessible_resources": [
+    "iframe.html"
+  ],
+  "manifest_version": 2
+}

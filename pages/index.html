@@ -1,0 +1,39 @@
+<html lang="en">
+  <head>
+    <style type="text/css">
+      #title_bug, #title_nobug {
+        position: fixed;
+        top: 0;
+        width: 300px;
+      }
+      iframe {
+        position: fixed;
+        top: 50px;
+        height: 300px;
+        width: 300px;
+      }
+      #iframe_bug, #title_bug {
+        right: 0;
+      }
+      #iframe_nobug, #title_nobug {
+        right: 300px;
+      }
+      #explanation {
+        height: 3000px;
+        width: 300px;
+      }
+    </style>
+  </head>
+<body>
+  <div id="title_bug">DragEnter won't trigger because this overlaps with the scrollbar</div>
+  <iframe id="iframe_bug" src="chrome-extension://joljlmjnlehomdeklimibhiibbbhljhn/iframe.html"></iframe>
+
+  <div id="title_nobug">DragEnter will trigger</div>
+  <iframe id="iframe_nobug" src="chrome-extension://joljlmjnlehomdeklimibhiibbbhljhn/iframe.html"></iframe>
+  <div id="explanation">
+    <p>
+      When a Chrome extension iframe overlaps with the right scroll bar, dragenter events do not fire.
+    </p>
+  </div>
+</body>
+</html>

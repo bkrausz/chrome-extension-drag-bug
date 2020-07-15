@@ -1,0 +1,35 @@
+
+<html>
+  <head>
+    <style>
+      #drag, #drop {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #000;
+        margin-bottom: 10px;
+      }
+    </style>
+    <script>
+      function dragstart_handler(ev) {
+        console.log("START");
+        document.getElementById("log").innerHTML += '<br />Drag Start';
+      }
+
+      function dragenter_handler(ev) {
+        console.log("ENTER");
+        document.getElementById("log").innerHTML += '<br />Drag Enter';
+        ev.preventDefault();
+      }
+
+      window.addEventListener('DOMContentLoaded', () => {
+        document.getElementById("drag").addEventListener("dragstart", dragstart_handler);
+        document.getElementById("drop").addEventListener("dragenter", dragenter_handler);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="drag" draggable="true">Drag Me</div>
+    <div id="drop">Over Me</div>
+    <div id="log"></div>
+  </body>
+</html>
